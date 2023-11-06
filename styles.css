@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Mulish', sans-serif;
+    cursor: default;
+    background-color: #F0F0F0;
+    color: #1C1C1A;
+    height: 100vh;
+    /* Use viewport height instead of 100% to occupy full screen height */
+    text-align: center;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #154151;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    /* optional drop shadow */
+}
+
+.logo-container img {
+    height: 40px;
+    width: auto;
+    fill: white;
+}
+
+#pianoRollContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 42px;
+}
+
+button {
+    padding: 15px 25px;
+    font-size: 18px;
+    color: #F0F0F0;
+    background-color: #944038;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+}
+
+button {
+    /* ... existing button styles ... */
+    border-bottom: 3px solid #381815;
+    /* A darker shade for 3D effect */
+    position: relative;
+    /* Required for the top movement on hover */
+    transition: all 1.1s ease;
+    /* Transition for all properties */
+}
+
+#buttonContainer {
+    display: flex;
+    justify-content: center;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+#pianoRollContainer {
+    display: grid;
+    grid-gap: 40px;
+    margin: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(355px, 1fr));
+    justify-content: center;
+}
+
+.piano-roll-svg {
+    border: 2px solid #381815;
+    margin: 10px 0px;
+}
+
+.piano-roll-card {
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: all 1.1s ease;
+}
+
+.piano-roll-card:hover {
+    /* transform: scale(1.03); */
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+.piano-roll-card.main .piano-roll-svg {
+    margin: 25px 0px;
+}
+
+.main {
+    transition: all 1.1s ease;
+    grid-column: span 2;
+    grid-row: span 2;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+.description {
+    margin: 10px 0px 0px 0px;
+}
+
+
+/* Mobile screen */
+
+@media only screen and (max-width: 600px) {
+    #pianoRollContainer {
+        grid-template-columns: 1fr 1fr !important;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .piano-roll-card.main .piano-roll-svg {
+        height: 250px !important;
+    }
+}
